@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>D3 Tabular Vis</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!--  <script type="text/javascript" src = "index.js"></script>-->
+</head>
+<body>
+<h1>Table Vis</h1>
+<script type="text/javascript">
+
+
+
+
+
+    // 500 x 100 SVG space
+    var w = 500;
+    var h = 100;
+    var cellpadding = 2;
+
+    // d3 adds / selects HTML elements
+    var svg = d3.select("body").append("svg")
+        .attr("width",w)
+        .attr("height",h);
+
+    // get the data
+    d3.csv('assets/data/a1-cereals.csv')
+    // then do this
+        .then(function(data){
+            console.log(data);
+            svg.selectAll("rect") // represents the rects that don't exist yet
+                .data(data) // lets d3 know to use data variable when populating vis
+                .enter()
+                // make a rect for every data point (will all be on top of each other)
+                .append("rect") // HTML place holder
+                .attr("width",w/data.length - cellpadding)
+                .attr("height",h)
+
+                // space out bars w/ x location on page
+                // increase value of x as you move from 0 - data.length
+                .attr("x",function(d,i){
+                    return(w/data.length*i);
+                })
+
+        });
+
+
+    // // create svg elements for each record
+    // svg.selectAll("rect")
+    //         .data(data)
+    //         .enter()
+    //         .append("rect") // HTML place holder
+    //         .attr("width",w/data.length)
+    //         .attr("height",h)
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
