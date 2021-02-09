@@ -141,3 +141,17 @@ JavaScript/Python
     - descendant
     
 # If a file is really big, you don't want to start drawing shapes or accessing data b4 it has loaded    
+
+### action target pairs
+![](action-target.png)
+
+# Marks and Channels 
+### dif types of channels
+![](channels.png)
+
+### selecting channels based on data types
+![](selecting-channels.png)
+
+### grouping
+![](Grouping.png)
+
