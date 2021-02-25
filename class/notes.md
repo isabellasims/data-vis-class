@@ -151,7 +151,36 @@ JavaScript/Python
 
 ### selecting channels based on data types
 ![](selecting-channels.png)
+- be careful not to use wrong types os channels
 
 ### grouping
 ![](Grouping.png)
 
+### tabular data vis
+![](tdata.png)
+
+### how to do what how why
+![](texptdata.png)
+ 
+#### another what how why 
+![](whwbarchart.png)
+
+# MAPS
+
+#### Types of maps:
+![](Screen Shot 2021-02-23 at 2.41.46 PM.png)
+
+#### different binning yield different results
+![](dif-shapes.png)
+
+#### Tobler's First Law
+![](Screen Shot 2021-02-23 at 3.07.16 PM.png)
+
+#### 
+![](atrrs.png)
+
+#### Tree maps
+![](tmap.png)
+
+#### Radial Layouts
+![](radial.png)
