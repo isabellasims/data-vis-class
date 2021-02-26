@@ -148,6 +148,7 @@ JavaScript/Python
 # Marks and Channels 
 ### dif types of channels
 ![](channels.png)
+- can be width too
 
 ### selecting channels based on data types
 ![](selecting-channels.png)
@@ -169,6 +170,7 @@ JavaScript/Python
 
 #### Types of maps:
 ![](Screen Shot 2021-02-23 at 2.41.46 PM.png)
+- fields = heat map
 
 #### different binning yield different results
 ![](dif-shapes.png)
@@ -182,5 +184,33 @@ JavaScript/Python
 #### Tree maps
 ![](tmap.png)
 
-#### Radial Layouts
+####Radial Layouts
 ![](radial.png)
+
+
+
+## 2/26/21
+
+#### scalar field 
+![](s field.png)
+a lot like an isoline
+
+#### space time problem
+![](stproblem.png)
+
+
+#### Clustering trajectory
+![](cluster.png)
+- type of bundling
+- helpful w/time & movement thru space
+
+
+####map tools
+![](tools.png)
+
+#### map tools
+![](tools2.png)
+- unfolding = similar to proc - has support for touch & pen support
+- geotools = for java
+- ArcPy & geopandas = for python
+- color brewer = good for chlor map coloring
