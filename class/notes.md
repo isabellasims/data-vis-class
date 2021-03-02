@@ -214,3 +214,46 @@ a lot like an isoline
 - geotools = for java
 - ArcPy & geopandas = for python
 - color brewer = good for chlor map coloring
+
+# NETWORKS
+![](network-term.png)
+- directed network: cycles
+### Node-link diagrams
+node/tree terminology
+![](node-tree-term.png)
+- tree root at root
+
+### network centrality
+![](net-cent.png)
+- betweenness centrality = trickier. Need to determine shortest paths like closeness, then you need to examine it. Means whatever path you have to take through a network will often fall on shortest path
+- - example: call - whatever the shortest path is btwn you and caller, that's the path your network will connect you to
+
+### types of network visualizations
+![](types-nets.png)
+
+- #### node link networks
+    ![](nets-marks-channels.png)    
+    - force-directed trees/placement
+        ![](force-dir-trees.png)   
+        ![](force-dir-idiom.png) 
+        
+    - arc diagrams
+    ![](arc-dia.png)  
+        - shows connections
+    ![](nl-sum.png)
+
+- ### adjacency matricies
+![](adj-id.png)
+
+- rectolinear layout
+    - ordering nodes accross top & sides
+    
+- node-link represented as adjacency matrix 
+![](nl-mat.png)
+
+![](mat-sum.png)
+- #### Hive plot
+![](hive-plot.png)
+
+
+
