@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/WCL" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/hw/hw1-let-s-make-a-bar-chart-isabellasims" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/hw/hw2-maps-isabellasims" vcs="Git" />
   </component>
