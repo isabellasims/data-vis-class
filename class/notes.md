@@ -256,5 +256,54 @@ node/tree terminology
 ![](hive-plot.png)
 
 # 3/23/21
+# Network Analysis
+### 8 ways to represent tree based data
+![](tbd.png)
+- A = most intuitive
+- B = same as A but rotated to left
+- C = icicle diagram
+    - root gets full width, elements below are children, their width indicates how many children they have
+- D = radial node length
+    - lets you follow paths easily bc of lines
+- E = instead of lines, uses adjacency
+    - not that dif from C
+    - C is to A as D is to E
+    - subdividing area to show parent child relationships
+- F = uses containment
+    - set and subset rela
+    - root is outer circle
+    - how far u have to go 
+- G = tree map
+    - rectolinear arrangement & using containment
+- H = indented view
+    - ex. python, browser inspection
+- they're all uniform (each parent has same amt of children)
 
+## Tree maps
+![](tmaps.png)
+- works well for millions of lead nodes & mils of links
 
+#### tmaps kinds of layoutst
+![](tmapsL.png)
+
+#### paralell sets
+- use categorical dimensions to subdivide
+- subdivide by male & female then again based on whether you survive
+![](psets.png)
+data for trees doesn't have to use tree-like data, you can form data into a tree
+####sunbursts
+![](sunburst.png)
+#### voronoi & quadtree = also a treemap
+
+### PivotGraphs
+![](PGCWWH.png)
+- given a large graph / network, we might care most about intersection of categories & how they relate to eacother
+- basically a node-link network but rolled up
+- rolling up a graph and looking at connections
+one key:
+![](PGC.png)
+- most interested in how many links btwn one category to the next
+
+multiple keys:
+![](PGC2.png)
+- looking at intersections and connections based on category identities on the left
