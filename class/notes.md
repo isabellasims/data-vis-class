@@ -1,6 +1,6 @@
 
 **Common Reasons DV can fail**
-![](pitfalls.png)
+![](images/pitfalls.png)
 
 **What Why How**
 
@@ -9,7 +9,7 @@ What? do we consider
 Why? Do we consider it
 
 How? Do we realize it?
-![](WWW.png)
+![](images/WWW.png)
 
 # Intro to D3.JS (part 1)
 **Cli side code** = mostly javascript
@@ -143,56 +143,56 @@ JavaScript/Python
 # If a file is really big, you don't want to start drawing shapes or accessing data b4 it has loaded    
 
 ### action target pairs
-![](action-target.png)
+![](images/action-target.png)
 
 # Marks and Channels 
 ### dif types of channels
-![](channels.png)
+![](images/channels.png)
 - can be width too
 
 ### selecting channels based on data types
-![](selecting-channels.png)
+![](images/selecting-channels.png)
 - be careful not to use wrong types os channels
 
 ### grouping
-![](Grouping.png)
+![](images/Grouping.png)
 
 ### tabular data vis
-![](tdata.png)
+![](images/tdata.png)
 
 ### how to do what how why
 ![](texptdata.png)
  
 #### another what how why 
-![](whwbarchart.png)
+![](images/whwbarchart.png)
 
 # MAPS
 
 #### Types of maps:
-![](Screen Shot 2021-02-23 at 2.41.46 PM.png)
+![](images/Screen Shot 2021-02-23 at 2.41.46 PM.png)
 - fields = heat map
 
 #### different binning yield different results
-![](dif-shapes.png)
+![](images/dif-shapes.png)
 
 #### Tobler's First Law
-![](Screen Shot 2021-02-23 at 3.07.16 PM.png)
+![](images/Screen Shot 2021-02-23 at 3.07.16 PM.png)
 
 #### 
-![](atrrs.png)
+![](images/atrrs.png)
 
 #### Tree maps
-![](tmap.png)
+![](images/tmap.png)
 
 ####Radial Layouts
-![](radial.png)
+![](images/radial.png)
 
 
 
 ## 2/26/21
 
 #### scalar field 
-![](s field.png)
+![](images/s field.png)
 a lot like an isoline
 
 #### space time problem
@@ -200,65 +200,65 @@ a lot like an isoline
 
 
 #### Clustering trajectory
-![](cluster.png)
+![](images/cluster.png)
 - type of bundling
 - helpful w/time & movement thru space
 
 
 ####map tools
-![](tools.png)
+![](images/tools.png)
 
 #### map tools
-![](tools2.png)
+![](images/tools2.png)
 - unfolding = similar to proc - has support for touch & pen support
 - geotools = for java
 - ArcPy & geopandas = for python
 - color brewer = good for chlor map coloring
 
 # NETWORKS
-![](network-term.png)
+![](images/network-term.png)
 - directed network: cycles
 ### Node-link diagrams
 node/tree terminology
-![](node-tree-term.png)
+![](images/node-tree-term.png)
 - tree root at root
 
 ### network centrality
-![](net-cent.png)
+![](images/net-cent.png)
 - betweenness centrality = trickier. Need to determine shortest paths like closeness, then you need to examine it. Means whatever path you have to take through a network will often fall on shortest path
 - - example: call - whatever the shortest path is btwn you and caller, that's the path your network will connect you to
 
 ### types of network visualizations
-![](types-nets.png)
+![](images/types-nets.png)
 
 - #### node link networks
-    ![](nets-marks-channels.png)    
+    ![](images/nets-marks-channels.png)    
     - force-directed trees/placement
-        ![](force-dir-trees.png)   
-        ![](force-dir-idiom.png) 
+        ![](images/force-dir-trees.png)   
+        ![](images/force-dir-idiom.png) 
         
     - arc diagrams
-    ![](arc-dia.png)  
+    ![](images/arc-dia.png)  
         - shows connections
-    ![](nl-sum.png)
+    ![](images/nl-sum.png)
 
 - ### adjacency matricies
-![](adj-id.png)
+![](images/adj-id.png)
 
 - rectolinear layout
     - ordering nodes accross top & sides
     
 - node-link represented as adjacency matrix 
-![](nl-mat.png)
+![](images/nl-mat.png)
 
-![](mat-sum.png)
+![](images/mat-sum.png)
 - #### Hive plot
-![](hive-plot.png)
+![](images/hive-plot.png)
 
 # 3/23/21
 # Network Analysis
 ### 8 ways to represent tree based data
-![](tbd.png)
+![](images/tbd.png)
 - A = most intuitive
 - B = same as A but rotated to left
 - C = icicle diagram
@@ -280,33 +280,89 @@ node/tree terminology
 - they're all uniform (each parent has same amt of children)
 
 ## Tree maps
-![](tmaps.png)
+![](images/tmaps.png)
 - works well for millions of lead nodes & mils of links
 
 #### tmaps kinds of layoutst
-![](tmapsL.png)
+![](images/tmapsL.png)
 
 #### paralell sets
 - use categorical dimensions to subdivide
 - subdivide by male & female then again based on whether you survive
-![](psets.png)
+![](images/psets.png)
 data for trees doesn't have to use tree-like data, you can form data into a tree
 ####sunbursts
-![](sunburst.png)
+![](images/sunburst.png)
 #### voronoi & quadtree = also a treemap
 
 ### PivotGraphs
-![](PGCWWH.png)
+![](images/PGCWWH.png)
 - given a large graph / network, we might care most about intersection of categories & how they relate to eacother
 - basically a node-link network but rolled up
 - rolling up a graph and looking at connections
 one key:
-![](PGC.png)
+![](images/PGC.png)
 - most interested in how many links btwn one category to the next
 
 multiple keys:
-![](PGC2.png)
+![](images/PGC2.png)
 - looking at intersections and connections based on category identities on the left
 
-3/26/21
+# 3/26/21
+# color thoery
+
+linguistic relativity: 
+![](images/ling-rel.png)
+
+## rods and cones
+- cones: light vs dark
+- rods: perception of color
+- #### trichromatic theory = in terms of RGB
+- #### Opponent process theory 
+    - 3 types of cones" large, medium and small that perceive brightness, hue & colorfulness
+    - looks at our brain as a neural network
+    - better for datavis
+    - after images
+        - look at something blue, yellow processors are tired out
+        - flip to a blank screen & those cells are still hyper active
+ 
+ animal that sees the most colors: mantis shrimp
+ 
+ ## different color spaces
+  ![](images/col-spaces.png)
+ 
+ 
+ ### HSL/HSB
+ - lumincance (adding white)
+ - hue 
+ - saturation (adding black)
+ - HSL and "LAB" give us more control over color & how much it pops
+ 
+ ![](images/LHS.png)
+ ![](images/HSL-3d.png)
+ 
+ ### rgb
+  ![](images/RGB.png)
+ - problem: to move from white to blue, you can't just add white. you also need to change other color values
+ 
+ rainbows:
+   ![](images/rainbows.png)
+   
+  ## choosing colors based on data (binary, sequential,diverging)
+  
+  ![](images/col-pick.png)'
+  
+# Other channels
+  ![](images/more-chans.png)'
+
+## angle channel
+  ![](images/angle.png)'
+  
+## arrows & lines in node-link diagram
+- lines in node-link diagrams communicate different things & some are more effective than others
+- ![](images/lines.png)'
+- ![](images/lines-effec.png)'
+- ex. A (arrow) just tells the direction, nothing else
+
+
 
