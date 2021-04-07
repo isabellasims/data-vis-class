@@ -356,7 +356,7 @@ linguistic relativity:
   ![](images/more-chans.png)'
 
 ## angle channel
-  ![](images/angle.png)'
+  ![](images/angle.png)' 
   
 ## arrows & lines in node-link diagram
 - lines in node-link diagrams communicate different things & some are more effective than others
