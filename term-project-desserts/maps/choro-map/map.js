@@ -9,9 +9,7 @@ let ward5;
 let ward6;
 let ward7;
 let ward8;
-let PCBextent;
 let medIncExtent;
-
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFnb2R3aW4iLCJhIjoiY2lnOGQxaDhiMDZzMXZkbHYzZmN4ZzdsYiJ9.Uwh_L37P-qUoeC-MBSDteA';
@@ -25,9 +23,13 @@ const map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/light-v10'
 });
 
+// query site for district bounds, might want to download later if stuff gets slow
 const wardGeoJsonUrl = "https://opendata.arcgis.com/datasets/0ef47379cbae44e88267c01eaec2ff6e_31.geojson";
 
-
+/**
+ * load data here
+ * note: open data dc lets you live query - we should load all the data we can this way so that it can auto update over time
+ */
 map.on('load', function(){
     console.log('about to load data');
 
@@ -36,9 +38,15 @@ map.on('load', function(){
     ]).then(ready);
 });
 
+/**
+ * this is where you add your sources & layers to the map
+ * Everything that needs to happen after the map loads goes here
+ */
 function ready(data){
     wards = data;
     wards = wards[0]; // just removing un needed attrs
+
+    // wards are in a random order so this is for conven if adding attrs to specific wards
     ward1 = wards.features[4];
     ward2 = wards.features[3];
     ward3 = wards.features[6];
@@ -48,25 +56,19 @@ function ready(data){
     ward7 = wards.features[2];
     ward8 = wards.features[0];
 
+    // adding median & avg incomes from functions in datawork.js
     addIncome();
-    addPCB();
 
+
+    // d3 extent for med income by ward to be used for choro map scaling
     medIncExtent = d3.extent(wards.features, d => { // determine which districts have the least and greatest number of calls
         return d.properties.med; // d3.extent determines min & max values of an array
     });
 
-    PCBextent = d3.extent(wards.features, d => { // determine which districts have the least and greatest number of calls
-        return d.properties.PCB; // d3.extent determines min & max values of an array
-    });
-    console.log("extent",PCBextent);
-
-
     console.log(data);
+
     addSources();
     addLayers();
-
-
-
 
 }
 

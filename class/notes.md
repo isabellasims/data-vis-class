@@ -364,5 +364,123 @@ linguistic relativity:
 - ![](images/lines-effec.png)'
 - ex. A (arrow) just tells the direction, nothing else
 
+# 4/13/21
 
+# Embedding
+degree of interest and focal points
 
+- zoom, adjust, and slide
+
+    - ![](images/foc.png)
+    
+## 4 Approaches to graph exploration 
+- fisheye lens, magnifying lens, neighborood layering, bring and go
+
+    - ![](images/lens.png)
+    
+        - neighborhood layering ---> showing things connected to a node 
+            - ex. show me eithering connected by 3 hops
+            
+        - bring and go
+            - path following
+            - snaps available nodes that are connected to current link (bring) & then click which one to go to
+
+# Text visualization
+
+- word cloud = bad
+
+- ContexTour & FacetAtlas
+    - ![](images/ctfa.png)
+    
+## document similarity
+
+- ![](images/ds.png)
+
+    - take a dataset where docs are similar enough to create something
+    - #### Term frequency - Inverse Document Frequency
+        - bag of words
+        - ![](images/tfidf.png)
+            - term frequency: amt of times words occur
+            - IDF: filtering out words that don't matter
+        
+                - A word like "the" occuring a lot in 2 different documents doesn't make them similar
+### document summary
+- "is a" relationships
+    -- ![](images/isa.png)
+    
+    
+# 4/16/21
+
+# Text
+
+wattenburg & vieg = probably who pioneered whatever datavis thing
+
+### PhraseNet
+   - trying to understand phrases in a text & how those tell us how th auther uses language
+    
+### Web Seer
+   - bias in search engines
+   - http://hint.fm/seer/#left=why%20do%20professors&right=why%20do%20teachers
+
+### story boards
+ - ex: lifelines
+ 
+ - #### theme rivers 
+ 
+- #### outflow
+    - height vertical is patients who have experienced, then we can find who has had positive vs negative outcome
+    
+- ### sentiment analysis tells you if pos or neg
+
+--------------------------------------
+
+# Visual analytics
+## what is visual analytics?
+- science is what sets it apart, Keim has a more thourough definition
+
+## main components of info vis
+- ![](images/infovis.png)
+
+- dif from data vis, for DV there is an establisheed task 
+- Visual analytics is broader, not just coming up with a new bar chart
+    - incorperate dif techniques & incorperate ML 
+    - bridge the gap
+    - ### recommendations to fix dv problem
+- ### the invoVis pipeline
+    - things we have 2 do to a dataset to get it in the form we want, 
+    - all of these elements ignore something important...
+        - user is just one little box
+ - ### The visual analytics process
+    - ### keims alternative vs Shneiderman
+        - for a long time at conferences there was a split btwn the 2, but as of this year it's just vis conference
+    - ### the visual analytics pipeline     
+        - now user is more than just a box  
+        - the more you know about a dataset, the more hypotheses you can make = change of how you want to visualize the data = process begins all over again
+        
+ - ### infovis pipeline vs visual analytics pipeline
+- ### Application challenges
+    - img
+    - practical examples
+- Integrating data mining and  ML
+    - dimension reduction
+    - ![](images/dim.png)
+        - PCA (principal component analysis), MDS ....
+            - ![](images/PCA2.png)
+            - what does a user see as a result of PCA
+                - ### coupling mental models & data models
+                    - ![](images/coup.png)
+                    - distance
+                    - congition: we see things that are close together as being related
+                    - to system
+                    - * we want to adjust a vis so user sees what they're supposed to
+                    
+        - ## img
+    - feature selection
+        - entity extraction
+    - similarity functions
+        - "find more like this..."
+    - prediction
+        - will a stock price go up or down?
+
+interaxis: https://va.gatech.edu/live-projects/interaxis/
+- click & drag x & y axis

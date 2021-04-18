@@ -5,6 +5,9 @@
     <mapping directory="$PROJECT_DIR$/WCL" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/hw/hw1-let-s-make-a-bar-chart-isabellasims" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/hw/hw2-maps-isabellasims" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hw/hw3-networks-and-trees-isabellasims" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hw/hw3-networks-and-trees-isabellasims/hw4-commercial-system-isabellasims" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hw/hw4-commercial-system-isabellasims" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/term-project-desserts" vcs="Git" />
   </component>
 </project>
