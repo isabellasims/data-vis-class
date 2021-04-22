@@ -37,6 +37,6 @@ Challenges so far:
  What we're using:
  - mapBox gljs
  - turf.js
- - d3.js 
+ - d3.js
 
 

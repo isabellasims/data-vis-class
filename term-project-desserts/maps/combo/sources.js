@@ -1,16 +1,45 @@
 function addSources() {
-    map.addSource('wardData', {
+    // add ward line sources to maps
+    groceryMap.addSource('wardData', {
         'type': 'geojson',
         'data': wards
     });
 
-    map.addSource('Groceries', {
+    hospitalMap.addSource('wardData', {
+        'type': 'geojson',
+        'data': wards
+    });
+
+    schoolMap.addSource('wardData', {
+        'type': 'geojson',
+        'data': wards
+    });
+
+
+
+    // add point sources to maps
+    groceryMap.addSource('Groceries', {
         'type':'geojson',
         'data': groceryStorePoints
     });
 
+    hospitalMap.addSource('Hospitals', {
+        'type': 'geojson',
+        'data': hospitalPoints
+    });
+
+    schoolMap.addSource('Schools', {
+        'type': 'geojson',
+        'data': schoolPoints
+    });
+
 
 }
+
+
+
+
+
 
 function addLayers(){
     const wardLayer = {
@@ -32,20 +61,24 @@ function addLayers(){
     };
 
 
-
-    // ['#fff7fb','#ece7f2','#d0d1e6','#a6bddb','#74a9cf','#3690c0','#0570b0','#045a8d','#023858']
-    // ['#f7fbff','#deebf7','#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594']
-
-    const districtFillLayer = {
-        'id': 'districts-fill',
-        'type': 'fill',
-        'source': 'districts-source',
+    const hospitalPointsLayer = {
+        'id': 'Hospitals',
+        'type': 'circle',
+        'source': 'Hospitals',
         'paint': {
-            "fill-color": [
-                "get", "feature-color"
-            ],
-            'fill-opacity': 0.4
-        }
+            'circle-opacity': .5
+        },
+
+    };
+
+    const schoolPointsLayer = {
+        'id': 'Schools',
+        'type': 'circle',
+        'source': 'Schools',
+        'paint': {
+            'circle-opacity': .5
+        },
+
     };
 
     const medIncFillLayer = {
@@ -56,21 +89,7 @@ function addLayers(){
             "fill-color": {
                 "property": "med",
                 "stops": [
-
-                    // [medIncExtent[0], "#f7fbff"],
-                    // [medIncExtent[1], "#034e7b"]
-
-                    // [medIncExtent[0], "white"],
-                    // [medIncExtent[1]/2, "pink"],
-                    // [medIncExtent[1], "red"]
-
-                    //     [medIncExtent[0], "#f7fbff"],
-                    // [medIncExtent[1], "#084594"]
-
-                    // [medIncExtent[0], "#FFFFFF"],
-                    // [medIncExtent[1], "#6e016b"]
-
-                        [medIncExtent[0], "#FFFFFF"],
+                    [medIncExtent[0], "#FFFFFF"],
                     [medIncExtent[1]/2, "#9ecae1"],
                     [medIncExtent[1], "#004094"]
 
@@ -85,10 +104,21 @@ function addLayers(){
 
 
 
-    map.addLayer(wardLayer);
-    map.addLayer(medIncFillLayer);
-    map.addLayer(groceryPointsLayer);
+    // add layers to grocery map
+    groceryMap.addLayer(wardLayer);
+    groceryMap.addLayer(medIncFillLayer);
+    groceryMap.addLayer(groceryPointsLayer);
 
+
+    // add layers to hospital map
+    hospitalMap.addLayer(wardLayer);
+    hospitalMap.addLayer(medIncFillLayer);
+    hospitalMap.addLayer(hospitalPointsLayer);
+
+    // add layers to school map
+    schoolMap.addLayer(wardLayer);
+    schoolMap.addLayer(medIncFillLayer);
+    schoolMap.addLayer(schoolPointsLayer);
 
 
 

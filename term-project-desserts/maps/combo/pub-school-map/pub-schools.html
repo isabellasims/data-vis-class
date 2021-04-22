@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+</head>
+<body>
+
+<style type="text/css">
+    #map {
+        position:absolute;
+        width: 60%;
+        height: 60%;
+    }
+
+    svg {
+        font: 10px sans-serif;
+    }
+</style>
+<div id='map' style='width: 1000px; height: 800px;'></div>
+
+<script type="text/javascript">
+    const dc = [-77.0090, 38.8898];
+    let drawPoints = true;
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFnb2R3aW4iLCJhIjoiY2lnOGQxaDhiMDZzMXZkbHYzZmN4ZzdsYiJ9.Uwh_L37P-qUoeC-MBSDteA';
+
+
+    const map = new mapboxgl.Map({
+        container: 'map',
+        center: dc,
+        maxZoom: 13,
+        minZoom: 10,
+        zoom: 11,
+        style: 'mapbox://styles/mapbox/light-v10'
+    });
+    map.on('load', function(){
+        console.log('about to load data');
+        d3.json('Public_Schools.geojson')
+
+            .then(ready);
+
+    });
+
+
+    function ready(data){
+
+        console.log("data loading complete");
+
+
+        map.addSource('Groceries', {
+            'type':'geojson',
+            'data': data
+        });
+
+        const callPoints = map.addLayer({
+            'id' : 'Groceries',
+            'type': 'circle',
+            'source': 'Groceries',
+            'paint': {
+                'circle-opacity': .5
+            }
+        })
+
+
+    }
+</script>
+</body>
