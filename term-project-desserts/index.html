@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DC Desserts</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src='https://unpkg.com/@turf/turf@6.3.0/turf.min.js'></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="text-align:center;font-size: 100px">D.C. Deserts</h1>
+<hr>
+
+
+<!--Grocery Map-->
+<div class="section">
+
+    <!--Groceries Map-->
+    <div id='GMap'>
+        <h1 style="text-align: center">Grocery Map</h1>
+        <div id='Grocery-Map' class ='child' style='width: 1000px; height: 800px;'></div>
+    </div>
+
+    <!--Hospitals Map-->
+    <div id='HMap'>
+        <h1 style="text-align: center">Hospital Map</h1>
+        <div id='Hospital-Map' class ='child' style='width: 1000px; height: 800px;'></div>
+    </div>
+
+    <!--Public School Map-->
+    <div id='SMap'>
+        <h1 style="text-align: center">Public School Map</h1>
+        <div id='Public-School-Map' class ='child' style='width: 1000px; height: 800px;'></div>
+    </div>
+</div>
+
+<div cass="section3">
+    <div id='maplegend' class='child' style='width: 100px; height: 200px'></div>
+    <div id='ChartLegend' class='child' style='width: 100px; height: 200px;'></div>
+</div>
+
+<h1 style="text-align:center">Summary</h1>
+
+<div class="section2">
+    <div id='Chart' style='...'></div>
+</div>
+
+<script src = "map.js"></script>
+<script src = "sources.js"></script>
+<script src = "datawork.js"></script>
+<script src = "chart.js"></script>
+<script src = chartlegend.js></script>
+<script src = legend.js></script>
+
+
+
+<!--<script src = "legend.js"></script>-->
+</body>
+</html>

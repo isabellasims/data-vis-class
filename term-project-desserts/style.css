@@ -1,0 +1,19 @@
+.section {
+    display: grid;
+    justify-content: center;
+    justify-content: space-evenly;
+    grid-template-columns: 1000px 1000px 1000px
+}
+
+.section2 {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 500px 1000px
+}
+
+.section3 {
+    display: grid;
+    justify-content: center;
+
+}
+

@@ -36,11 +36,6 @@ function addSources() {
 
 }
 
-
-
-
-
-
 function addLayers(){
     const wardLayer = {
         'id': 'wardLayer',
@@ -56,6 +51,7 @@ function addLayers(){
         'type': 'circle',
         'source': 'Groceries',
         'paint': {
+            "circle-color" : "rgb(0,255,0)",
             'circle-opacity': .5
         }
     };
@@ -66,6 +62,7 @@ function addLayers(){
         'type': 'circle',
         'source': 'Hospitals',
         'paint': {
+            "circle-color" : "rgb(255,0,0)",
             'circle-opacity': .5
         },
 
@@ -76,6 +73,7 @@ function addLayers(){
         'type': 'circle',
         'source': 'Schools',
         'paint': {
+            "circle-color" : "rgb(255,255,0)",
             'circle-opacity': .5
         },
 
@@ -99,11 +97,6 @@ function addLayers(){
         }
     };
 
-
-
-
-
-
     // add layers to grocery map
     groceryMap.addLayer(wardLayer);
     groceryMap.addLayer(medIncFillLayer);
@@ -119,10 +112,6 @@ function addLayers(){
     schoolMap.addLayer(wardLayer);
     schoolMap.addLayer(medIncFillLayer);
     schoolMap.addLayer(schoolPointsLayer);
-
-
-
-
 
 
 }

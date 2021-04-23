@@ -9,13 +9,38 @@ let ward5;
 let ward6;
 let ward7;
 let ward8;
+
 let medIncExtent;
+
+let groceryStorePoints;
+let hospitalPoints;
+let schoolPoints;
+
+let colorScale;
 
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFnb2R3aW4iLCJhIjoiY2lnOGQxaDhiMDZzMXZkbHYzZmN4ZzdsYiJ9.Uwh_L37P-qUoeC-MBSDteA';
 
-const map = new mapboxgl.Map({
-    container: 'map',
+const groceryMap = new mapboxgl.Map({
+    container: 'Grocery-Map',
+    center: dc,
+    maxZoom: 13,
+    minZoom: 10,
+    zoom: 11,
+    style: 'mapbox://styles/mapbox/light-v10'
+});
+
+const hospitalMap = new mapboxgl.Map({
+    container: 'Hospital-Map',
+    center: dc,
+    maxZoom: 13,
+    minZoom: 10,
+    zoom: 11,
+    style: 'mapbox://styles/mapbox/light-v10'
+});
+
+const schoolMap = new mapboxgl.Map({
+    container: 'Public-School-Map',
     center: dc,
     maxZoom: 13,
     minZoom: 10,
@@ -30,11 +55,14 @@ const wardGeoJsonUrl = "https://opendata.arcgis.com/datasets/0ef47379cbae44e8826
  * load data here
  * note: open data dc lets you live query - we should load all the data we can this way so that it can auto update over time
  */
-map.on('load', function(){
+groceryMap.on('load', function(){
     console.log('about to load data');
 
     Promise.all([
         d3.json(wardGeoJsonUrl),
+        d3.json('data/Grocery_Store_Locations.geojson'),
+        d3.json('data/Hospitals.geojson'),
+        d3.json('data/Public_Schools.geojson')
     ]).then(ready);
 });
 
@@ -43,8 +71,11 @@ map.on('load', function(){
  * Everything that needs to happen after the map loads goes here
  */
 function ready(data){
-    wards = data;
-    wards = wards[0]; // just removing un needed attrs
+
+    wards = data[0]; // lines & income
+    groceryStorePoints = data[1];
+    hospitalPoints = data[2];
+    schoolPoints = data[3];
 
     // wards are in a random order so this is for conven if adding attrs to specific wards
     ward1 = wards.features[4];
@@ -65,10 +96,20 @@ function ready(data){
         return d.properties.med; // d3.extent determines min & max values of an array
     });
 
+
+
+    // colorScale = d3.scaleLinear()
+    //     .domain(medIncExtent)
+    //     .range([0, 1]);
+
+
+
     console.log(data);
 
+    doChart();
     addSources();
     addLayers();
+    addLegend();
 
 }
 
