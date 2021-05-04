@@ -1,10 +1,12 @@
 var legend = d3.select("#ChartLegend").append("svg")
     .attr("width", 500)
-    .attr("height", 500)
+    .attr("height", 200)
 
-var series = ["Median Income","Number  of Grocery Stores","Number  of Hospitals","Number  of Schools"]
+var series = ["Median Income","Number  of Grocery Stores","Number  of Hospitals","Number  of Schools"];
 
-var color = d3.scaleOrdinal().domain(series).range(["#004094","rgb(0,255,0)","rgb(255,0,0)","rgb(255,255,0)"])
+//var color = d3.scaleOrdinal().domain(series).range(["#004094","rgb(246,220,255)","rgb(255,0,0)","rgb(255,255,0)"])
+var color = d3.scaleOrdinal().domain(series).range(["#004094","rgb(0,255,0)","rgb(255,0,0)","#984ea3"])
+//var color = d3.scaleOrdinal().domain(series).range(["#034e7b","rgb(0,255,0)","rgb(255,0,0)","rgb(255,255,0)"])
 
 legend.selectAll("dots")
     .data(series)
@@ -28,4 +30,4 @@ legend.selectAll("labels")
     .style("alighment-baseline", "middle")
     .attr("transform", function(d, i){
         return "scale(2 2)"
-        })
+        });

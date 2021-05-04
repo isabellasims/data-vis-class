@@ -18,6 +18,8 @@ let schoolPoints;
 
 let colorScale;
 
+let ordScale;
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFnb2R3aW4iLCJhIjoiY2lnOGQxaDhiMDZzMXZkbHYzZmN4ZzdsYiJ9.Uwh_L37P-qUoeC-MBSDteA';
 
@@ -92,15 +94,97 @@ function ready(data){
 
 
     // d3 extent for med income by ward to be used for choro map scaling
-    medIncExtent = d3.extent(wards.features, d => { // determine which districts have the least and greatest number of calls
-        return d.properties.med; // d3.extent determines min & max values of an array
+    medIncExtent = d3.extent(wards.features, d => { // determine lowest & highest income
+        return d.properties.med;
     });
 
+    let colscale = d3.scaleLinear()
+        .domain(medIncExtent)
+        .range([0, 8]);
+
+    ordScale = d3.scaleOrdinal()
+        .domain([0, 8])
+        .range(["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#0570b0","#034e7b"]);
 
 
-    // colorScale = d3.scaleLinear()
-    //     .domain(medIncExtent)
-    //     .range([0, 1]);
+
+    wards.features.forEach(d => {
+        d.properties['feature-color'] = ordScale;
+    });
+
+    moveToMapPosition (groceryMap, [hospitalMap,schoolMap]);
+    syncMaps ();
+
+
+    function moveToMapPosition (master, clones) {
+        var center = master.getCenter();
+        var zoom = master.getZoom();
+        var bearing = master.getBearing();
+        var pitch = master.getPitch();
+
+        clones.forEach(function (clone) {
+            clone.jumpTo({
+                center: center,
+                zoom: zoom,
+                bearing: bearing,
+                pitch: pitch
+            });
+        });
+    }
+
+// Sync movements of two maps.
+//
+// All interactions that result in movement end up firing
+// a "move" event. The trick here, though, is to
+// ensure that movements don't cycle from one map
+// to the other and back again, because such a cycle
+// - could cause an infinite loop
+// - prematurely halts prolonged movements like
+//   double-click zooming, box-zooming, and flying
+   // let arguments;
+
+    function syncMaps () {
+        let arguments = [hospitalMap,groceryMap,schoolMap];
+        var maps;
+        var argLen = arguments.length;
+        if (argLen === 1) {
+            maps = arguments[0];
+        } else {
+            maps = [];
+            for (var i = 0; i < argLen; i++) {
+                maps.push(arguments[i]);
+            }
+        }
+
+        // Create all the movement functions, because if they're created every time
+        // they wouldn't be the same and couldn't be removed.
+        var fns = [];
+        maps.forEach(function (map, index) {
+            fns[index] = sync.bind(null, map, maps.filter(function (o, i) { return i !== index; }));
+        });
+
+        function on () {
+            maps.forEach(function (map, index) {
+                map.on('move', fns[index]);
+            });
+        }
+
+        function off () {
+            maps.forEach(function (map, index) {
+                map.off('move', fns[index]);
+            });
+        }
+
+        // When one map moves, we turn off the movement listeners
+        // on all the maps, move it, then turn the listeners on again
+        function sync (master, clones) {
+            off();
+            moveToMapPosition(master, clones);
+            on();
+        }
+
+        on();
+    }
 
 
 

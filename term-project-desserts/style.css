@@ -1,6 +1,5 @@
 .section {
     display: grid;
-    justify-content: center;
     justify-content: space-evenly;
     grid-template-columns: 1000px 1000px 1000px
 }
@@ -8,7 +7,8 @@
 .section2 {
     display: grid;
     justify-content: center;
-    grid-template-rows: 500px 1000px
+    grid-template-rows: 500px 1000px;
+    margin-top: 100px;
 }
 
 .section3 {
@@ -16,4 +16,13 @@
     justify-content: center;
 
 }
+#maplegend{
+    margin: 50px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+}
 
+#legends{
+    float: left;
+
+}

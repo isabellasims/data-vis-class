@@ -20,7 +20,26 @@ function addIncome(){
     ward7.properties.med = 42201;
     ward8.properties.med = 39473;
 
-    colArray = [ward1.properties.med,ward2.properties.med,ward3.properties.med,ward4.properties.med,ward5.properties.med,ward6.properties.med,ward7.properties.med,ward8.properties.med]
+    // var incOrder = [ward8,ward7,ward5,ward4,ward1,ward2,ward6,ward3];
+    // let fills = ["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#0570b0","#034e7b"];
+    //
+    //
+    //
+    // // ward8.properties.fill = "#fff7fb";
+    // // ward7.properties.fill = "#ece7f2";
+    // // ward5.properties.fill = "#d0d1e6";
+    // // ward6.properties.fill = "#d0d1e6";
+    //
+
+
+    let incOrder = [ward8,ward7,ward5,ward4,ward1,ward2,ward6,ward3];
+    let fills = ["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#034e7b"];
+
+    for(let i = 0; i < fills.length; i ++){
+        incOrder[i].properties.fill = fills[i];
+    }
+
+    colArray = [ward1.properties.fill,ward2.properties.fill,ward3.properties.fill,ward4.properties.fill,ward5.properties.fill,ward6.properties.fill,ward7.properties.fill,ward8.properties.fill]
     return colArray;
 
 }

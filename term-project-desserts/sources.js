@@ -52,7 +52,7 @@ function addLayers(){
         'source': 'Groceries',
         'paint': {
             "circle-color" : "rgb(0,255,0)",
-            'circle-opacity': .5
+            'circle-opacity': 1
         }
     };
 
@@ -63,7 +63,7 @@ function addLayers(){
         'source': 'Hospitals',
         'paint': {
             "circle-color" : "rgb(255,0,0)",
-            'circle-opacity': .5
+            'circle-opacity': 1
         },
 
     };
@@ -73,12 +73,14 @@ function addLayers(){
         'type': 'circle',
         'source': 'Schools',
         'paint': {
-            "circle-color" : "rgb(255,255,0)",
-            'circle-opacity': .5
+            "circle-color" : "#984ea3",
+            'circle-opacity': 1
         },
 
     };
 
+    let incOrder = [ward8,ward7,ward5,ward4,ward1,ward2,ward6,ward3];
+    let fills = ["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#034e7b"];
     const medIncFillLayer = {
         'id': 'medInc-fill',
         'type': 'fill',
@@ -87,13 +89,29 @@ function addLayers(){
             "fill-color": {
                 "property": "med",
                 "stops": [
-                    [medIncExtent[0], "#FFFFFF"],
-                    [medIncExtent[1]/2, "#9ecae1"],
-                    [medIncExtent[1], "#004094"]
+                     [incOrder[0].properties.med, fills[0]],
+                    [incOrder[1].properties.med, fills[1]],
+                    [incOrder[2].properties.med, fills[2]],
+                    [incOrder[3].properties.med, fills[3]],
+                    [incOrder[4].properties.med, fills[4]],
+                    [incOrder[5].properties.med, fills[5]],
+                    [incOrder[6].properties.med, fills[6]],
+                    [incOrder[7].properties.med, fills[7]]
+
+                    // [ward1.properties.med, "#004094"],
+
+               //     8,7,5,4,2,1,6,6
+
+                //    [ward8.properties.med, fills[0]],
+                    // [ward1.properties.med, "#004094"],
+                    // [medIncExtent[0], "#FFFFFF"],
+                    // [medIncExtent[1]/2, "#9ecae1"],
+                    // [medIncExtent[1], "#004094"]
+                    // ["#fff7fb","#ece7f2","#d0d1e6","#a6bddb","#74a9cf","#3690c0","#0570b0","#0570b0","#034e7b"]
 
                 ]
             },
-            'fill-opacity': .8
+            'fill-opacity': 1
         }
     };
 

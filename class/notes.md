@@ -364,6 +364,125 @@ linguistic relativity:
 - ![](images/lines-effec.png)'
 - ex. A (arrow) just tells the direction, nothing else
 
+# 3/30/21
+## Animated Transitions
+![](images/anim-trans.png)
+- eyes beat memory
+    - animated transitions: instead of clearing and showing new, do animated transition
+  
+Selections:  
+ ![](images/selc.png)
+- details on demand: how do you want to show selection? hover, highlight, etc
+- ways to show selections
+    -  ![](images/ways-sel.png)
+        - ex of d3 hover / brushing (dynamic query)
+            - ![](images/d3hover.png)
+            
+Geometric v Semantic zoom
+- geo = camera zoom
+- semantic = idiom, elements shown change (more details on demand)
+    - ex. google maps when map gets more detailed as you zoom
+
+Sparklines            
+- ![](images/sparklines.png)
+## Attribute reduction
+![](images/att-red.png)
+![](images/att-red2.png)
+- important for soft eng & data science
+- Slice, cut, project
+    - ![](images/SCP.png)
+        - slice: take a thin range of attributes & keep everything above range or below
+        - cut: keep everything below a range & discard rest
+        - project: reduce attrs
+            - ex. choose from a tabular dataset & pick a few 
+            - projection tries to incorperate discarded info in some way
+            - width, height, & depth:
+                - stair example:
+                    - ![](images/stairs.png)
+
+## PCA (principle component analysis)
+![](images/PCAA.png)
+
+# 4/2/21
+## Faceting
+- creating different views with the same data
+    - superimpose, juxtapose, partition
+    ![](images/facet.png)
+- Methods 
+    - ![](images/facet-methods.png)
+        - share encoding: same/dif
+        - share data
+        - share navigation (toggling, panning, & zooming)
+- design choices: data and encoding  
+    - ![](images/facet-data-and-encoding.png)
+
+## Partition into views:
+- dif ways to seperate
+    - trellis display
+    ![](images/trellis.png)
+    - looks at change from 1 to year 2 for each year
+    - maps
+        - first split by types (flat, semi)
+        - second split by neighborhoods
+        - the way you partition a map will show different results
+         ![](images/part-map.png)
+ - Superimposing Layers
+    - basically just layer control
+    
+Line graph, small multiples, & Horizontal Graph        
+ ![](images/LSH-CHARTS.png)
+ 
+ 
+ 
+# 4/6/21
+## Reduction
+- why reduce? 
+    ![](images/why-red.png) 
+    - reduce amount of visual complexity because humans can only take in so much info at once
+    - ### caution: out of site = out of mind
+        - if something is filtered out, users may draw incomplete or incorrect conclusions so be careful when reducing
+    
+## filter & dynamic v static query
+- dynamic v static query
+    - static query
+        - send query 2 Db and wait for result to come back
+    - dynamic = live updates
+        - why dynamic is rare: if query result takes a sec 2 come back (would have2 query db) it's not really dynamic
+        - prefetching (pre-fetching ) 
+            - makes it possible if using a DB - can pre fetch results on a range of a slider
+    - tight coupling between input and output - details on demand
+    - scented widgets
+        ![](images/sc-wid.png) 
+        - improves queues with embedded visualizations
+        - allows you to guide users on what they query
+        - can help save users from wasting time
+    - DOFSA
+        - filtering out redundant info & ordering them by how similar/ dif they are
+## Aggregate
+-  ![](images/aggregate.png)    
+- histogram = one of most common tools for automatic aggregation
+- continuous scatterplot 
+    -  ![](images/cont-scat.png) 
+        - pic on right = cont scat
+        - counting # times we draw to a given pixel 2 buffer
+        - then get min, max, scale & display
+        - translates from discrete to continuous
+- box plot
+    - ![](images/box-plot.png)    
+    - alternative to histogram
+        - 50% of data inside box, 25% in upper, 25% in lower extreme
+    - alternative designs for box-plots
+        - ![](images/box-plot-alt.png) 
+        - vase plot, violin plot, bean plot
+            - ![](images/vase-plot.png) 
+- bullet graph (n)
+- ![](images/bullet-graphh.png)           
+- ![](images/bullet-graph2.png)   
+
+Geographically weighted visualizations (n)
+![](images/geo-w.png)  
+![](images/geo-w2.png)   
+
 # 4/13/21
 
 # Embedding
@@ -417,19 +536,22 @@ wattenburg & vieg = probably who pioneered whatever datavis thing
 
 ### PhraseNet
    - trying to understand phrases in a text & how those tell us how th auther uses language
+   ![](images/phrase-net.png)
     
 ### Web Seer
    - bias in search engines
    - http://hint.fm/seer/#left=why%20do%20professors&right=why%20do%20teachers
+    ![](images/web-seer.png)
 
 ### story boards
  - ex: lifelines
  
  - #### theme rivers 
+    - ![](images/themeriver.png)
  
 - #### outflow
     - height vertical is patients who have experienced, then we can find who has had positive vs negative outcome
-    
+     - ![](images/outflow.png)
 - ### sentiment analysis tells you if pos or neg
 
 --------------------------------------
@@ -437,6 +559,9 @@ wattenburg & vieg = probably who pioneered whatever datavis thing
 # Visual analytics
 ## what is visual analytics?
 - science is what sets it apart, Keim has a more thourough definition
+![](images/visa-def.png)
+![](images/matra-change.png)
+
 
 ## main components of info vis
 - ![](images/infovis.png)
@@ -446,20 +571,24 @@ wattenburg & vieg = probably who pioneered whatever datavis thing
     - incorperate dif techniques & incorperate ML 
     - bridge the gap
     - ### recommendations to fix dv problem
+    ![](images/infovisrecs.png)
 - ### the invoVis pipeline
+     ![](images/vispipe.png)
     - things we have 2 do to a dataset to get it in the form we want, 
     - all of these elements ignore something important...
         - user is just one little box
  - ### The visual analytics process
     - ### keims alternative vs Shneiderman
         - for a long time at conferences there was a split btwn the 2, but as of this year it's just vis conference
-    - ### the visual analytics pipeline     
+    - ### the visual analytics pipeline 
+         ![](images/vis-an-pipe.png)    
         - now user is more than just a box  
         - the more you know about a dataset, the more hypotheses you can make = change of how you want to visualize the data = process begins all over again
         
  - ### infovis pipeline vs visual analytics pipeline
+  ![](images/comp-pipes.png) 
 - ### Application challenges
-    - img
+    - ![](images/app-chal.png) 
     - practical examples
 - Integrating data mining and  ML
     - dimension reduction
@@ -484,3 +613,5 @@ wattenburg & vieg = probably who pioneered whatever datavis thing
 
 interaxis: https://va.gatech.edu/live-projects/interaxis/
 - click & drag x & y axis
+
+
